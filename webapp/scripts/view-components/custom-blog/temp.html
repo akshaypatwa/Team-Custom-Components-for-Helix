@@ -1,0 +1,19 @@
+<div class="modal-header dialog-header-confirm">
+    <button type="button" rx-id="x-button" class="close" ng-click="cancel()" aria-label="close">&times;</button>
+    <h4 class="modal-title">{{::"com.bmc.arsys.rx.standardlib.components.filter-presets.private-filter-preset-edit.modal.title" | translate}}</h4>
+</div>
+<div class="modal-body rx-record-grid-private-filter-preset-edit">
+    <form name="privateFilterPresetEditForm" novalidate>
+        <div class="d-texfield d-textfield_required">
+            <label class="d-textfield__item">{{::"com.bmc.arsys.rx.standardlib.components.filter-presets.private-filter-preset-edit.modal.input.label" | translate}}</label>
+            <input name="{{'name-' + presetData.id}}" type="text" rx-id="filter-preset-name-input" aria-label="{{::'com.bmc.arsys.rx.standardlib.components.filter-presets.private-filter-preset-edit.modal.input.label' | translate}}" class="rx-input" ng-required="true" autofocus maxlength="254" ng-model="presetData.title">
+            <p class="d-error" ng-init="nameError = privateFilterPresetEditForm['name-' + presetData.id].$error">
+                <span ng-if="nameError.required && privateFilterPresetEditForm['name-' + presetData.id].$touched">{{"com.bmc.arsys.rx.standardlib.view-components.validation.required" | translate}}</span>
+            </p>
+        </div>
+        <rx-search-filter rx-filter-data="presetData.filterData" rx-filter-configuration="filterConfiguration"></rx-search-filter>
+    </form>
+</div>
+<div class="rx-filter-preset-dialog-action-buttons">
+    <button type="button" rx-id="save-button" class="d-button d-button_primary d-icon-eye d-button_large" ng-click="save()">Save</button> <button type="button" rx-id="cancel-button" class="d-button d-button_secondary d-button_large" ng-click="cancel()">Cancel</button>
+</div>
