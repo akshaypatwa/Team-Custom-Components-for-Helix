@@ -1,6 +1,9 @@
 module.exports = function (grunt, config) {
     var path = require('path'),
-        url = 'http://' + grunt.option('host') + ':' + grunt.option('port');
+        // LMA:: We need https to debug Aws instances.
+        // url = 'http://' + grunt.option('host') + ':' + grunt.option('port');
+        protocol = grunt.option('api-https') ? 'https' : 'http',
+        url = protocol + '://' + grunt.option('host') + ':' + grunt.option('port');
 
     if (grunt.file.exists(path.join(config.bundle.target, 'index.html'))) {
         url += '/' + config.bundle.id + '/index.html';

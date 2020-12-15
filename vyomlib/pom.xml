@@ -37,7 +37,7 @@
             		
     
     
-    <developerPassword>Pune@123</developerPassword>
+    <developerPassword>Developer@1234</developerPassword>
             		
     
     
@@ -45,7 +45,7 @@
             		
     
     
-    <webUrl>https://developer8768.innovate.bmc.com/</webUrl>
+    <webUrl>https://developer7894.innovate.bmc.com</webUrl>
             	  
     
     
@@ -101,10 +101,6 @@
             		
     
     
-    <rx-sdk.bundleDisplayVersion>${project.version}</rx-sdk.bundleDisplayVersion>
-            		
-    
-    
     <definitionsFileLocation>src/main/definitions</definitionsFileLocation>
             		
     
@@ -142,7 +138,7 @@
             		
     
     
-    <jackson.version>2.9.9</jackson.version>
+    <jackson.version>2.9.8</jackson.version>
             		
     
     
@@ -174,7 +170,7 @@
             		
     
     
-    <rx-sdk.version>20.08.00-SNAPSHOT</rx-sdk.version>
+    <rx-sdk.version>19.11.0-SNAPSHOT</rx-sdk.version>
             		
     
     
@@ -243,18 +239,14 @@
   
   
   <modules>
-              
+            
     
-    
-    <!-- <module>automation</module> -->
-              
-    
-    
-    <module>bundle</module>
+    <module>automation</module>
           
     
-    <module>package</module>
+    <module>bundle</module>
       
+    <module>package</module>
   </modules>
     
 

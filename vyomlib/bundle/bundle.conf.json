@@ -13,19 +13,27 @@
             "livereload-port": 39005,
             "skip-tests": true,
             "skip-validation": true,
-            "api-host": "localhost",
-            "api-port": 8008,
-            "api-https": false,
+            "api-host": "developer7894.innovate.bmc.com",
+            "api-port": 443,
+			"api-https": true,
             "host": "localhost",
             "port": 9005
         },
         "packages": {
             "lib": {
-                "scripts": [],
+                "scripts": [
+                
+                ],
                 "styles": []
             },
+
             "app": {
-                "scripts": [
+                "scripts": [ 
+                    
+                    "lib/landing-console/bootstrap.min",
+                    "lib/table-resize/custom",
+                    "lib/marquee/marquee",
+                    "lib/rzslider-5.8.7/rzslider.min",
                     "scripts/**/*.global",
                     "scripts/**/*.module",
                     "scripts/**/*.config",
@@ -40,22 +48,28 @@
                     "scripts/**/*.controller",
                     "scripts/**/*.resource",
                     "!scripts/*",
-                    "scripts/com.vyom.vyomlib.module",
+                    "scripts/bx.module",
                     "scripts/*"
                 ],
                 "styles": [
-                    "resources/sass/com.vyom.vyomlib"
+                    "resources/sass/<%= bundle.id %>"
                 ],
                 "templates": [
                     "scripts/**/*.html"
                 ]
             },
+
             "ext": {
                 "scripts": [
+                "lib/landing-console/jquery.min",
+                "lib/landing-console/bootstrap.min",
+                "lib/rzslider-5.8.7/rzslider.min"
                 ],
                 "styles": [
+                "resources/sass/<%= bundle.id %>-ext"
                 ],
                 "templates": [
+                "scripts/view-components/**/*.html"
                 ]
             }
         }

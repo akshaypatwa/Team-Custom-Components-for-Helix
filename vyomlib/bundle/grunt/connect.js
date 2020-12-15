@@ -9,7 +9,9 @@ module.exports = function (grunt, config) {
                     context: ['/', '/api', '!/standardlib', '!/innovationsuite', '!/' + config.bundle.id],
                     host: grunt.option('api-host'),
                     port: grunt.option('api-port'),
-                    https: grunt.option('api-https')
+                    https: grunt.option('api-https'),
+                    // LMA:: Adding this new parameter after new SSL Certificate
+                    secure: grunt.option('api-https') ? false : true
                 }, {
                     context: '/innovationsuite',
                     host: grunt.option('host'),
@@ -22,6 +24,8 @@ module.exports = function (grunt, config) {
             options: {
                 hostname: grunt.option('host'),
                 port: grunt.option('port'),
+                // LMA:: Adding protocol to debug on Aws instances.
+                protocol: grunt.option('api-https') ? 'https' : 'http',
                 middleware: function (connect, options, middlewares) {
                     return grunt.config.process([
                         // Path concated with process working directory as workaround to grunt-connect-proxy bug
