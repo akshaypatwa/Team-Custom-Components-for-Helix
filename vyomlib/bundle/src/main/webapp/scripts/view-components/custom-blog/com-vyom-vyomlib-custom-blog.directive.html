@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+
+
+
+</head>
+
+<body>
+
+
+    <div class="card">
+        <div class="card-header" style="text-align: right">
+            <button type="button" id="refresh" class="d-button d-button_action d-icon-left-refresh" ng-click="onRefresh()"></button>
+            <button type="button" id="edit" class="d-button d-button_action d-icon-left-pencil" ng-click="toggleReadOnly(false);"></button>
+        </div>
+        <div class="card-body">
+            <div id="{{editorID}}">
+
+            </div>
+            <div id="CustomBlogEditor" ng-bind-html="staticHtml">
+
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="d-button d-button_primary" ng-click="updateHTML();">Save
+            </button>
+
+            <button type="button" class="d-button d-button_primary" ng-click="toggleReadOnly(true)">Cancel
+            </button>
+
+        </div>
+    </div>
+</body>
+
+</html>
